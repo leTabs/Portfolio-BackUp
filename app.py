@@ -86,7 +86,7 @@ def process_signup():
         #maybe i don't need that actually
         conn.close()
         return redirect(url_for('success'))
-        
+
 @app.route(f'/find', methods=['GET'])
 def success():
     #session
@@ -146,10 +146,10 @@ def chat():
     conn.close()
     return render_template('chatting.html', rec=rec, user=user)
 @socketio.on("message")
-def message(data): 
+def message(data):
     chat = session.get('chat')
     if chat not in chats: return
-    
+
     content = {'username': session.get('username'), "message": data['data']}
     send(content, to=chat)
     chats[chat]['messages'].append(content)
@@ -167,11 +167,11 @@ def connect(auth):
     send({'username': username, 'message': 'has entered the chat'}, to=chat)
     chats[chat]['members'] += 1
     print(f"{username} joined chat {chat}")
-    
+
 @socketio.on('disconnect')
 def disconnect():
     chat = session.get('chat')
-    username = session.get('username')
+    username = session.get('username' )
     leave_room(chat)
     if chat not in chats:
         chats[chat]['members'] -= 1
@@ -182,5 +182,5 @@ def disconnect():
 
 if __name__ == '__main__':
 #    app.run()
-    socketio.run(app, debug=True,allow_unsafe_werkzeug= True, host='192.168.1.3', port=4000)
+    socketio.run(app, debug=True,allow_unsafe_werkzeug= True)
    # app.close()
