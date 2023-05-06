@@ -133,7 +133,7 @@ def chat():
     print('[USER_ID]:', user_id )
     '''
     chat = ''
-    session['chat'] = chat
+    session['chat'] = chat  
     chats[chat] = {"members": 0,  "messages":[]}
     '''
     info = request.args.get('rec')
