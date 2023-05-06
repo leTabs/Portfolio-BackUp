@@ -9,7 +9,7 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=120)
 socketio = SocketIO(app)
 
 chats = {}
-
+usernames = []
 conn = sqlite3.connect('profiles.db')
 cursor = conn.cursor()
 cursor.execute("""
@@ -87,7 +87,7 @@ def process_signup():
         conn.close()
         return redirect(url_for('success'))
 
-@app.route(f'/find', methods=['GET'])
+@app.route(f'/find', methods=['GET'] )
 def success():
     #session 
     if 'logged_in' not in session:
@@ -95,15 +95,20 @@ def success():
     conn = sqlite3.connect('profiles.db')
     cursor = conn.cursor()
     cursor.execute('SELECT username FROM users')
-    usernames = [row[0] for row in cursor.fetchall()]
+    all_usernames = [row[0] for row in cursor.fetchall()]
+    for i in all_usernames: 
+        if i == session.get('username'):
+           if i not in usernames: 
+               usernames.append(i)
+        print(i)
     conn.close()
     user = session.get('username')
     user_id = str(usernames.index(user) + 1)
     session['own'] = user_id
-    print('[SESSION OWN]', session.get('own'))
-    print(session['own'])
+    #print('[SESSION OWN]', session.get('own'))
+    #print(session['own'])
    # print('[USER_ID]:',  usernames.index(user) + 1 )
-    usernames[usernames.index(user)] = user + '  (Me)'
+    #usernames[usernames.index(user)] = user + '  (Me)'
 
     info = request.args.get('rec')
     print('*'*60)
@@ -119,7 +124,12 @@ def chat():
     conn = sqlite3.connect('profiles.db')
     cursor = conn.cursor()
     cursor.execute('SELECT username FROM users')
-    usernames = [row[0] for row in cursor.fetchall()]
+    all_usernames = [row[0] for row in cursor.fetchall()]
+    for i in all_usernames: 
+        if i == session.get('username'):
+           if i not in usernames: 
+               usernames.append(i)
+        print(i)
     user_id = str(usernames.index(user) + 1)
     print('[USER_ID]:', user_id )
     '''
@@ -157,11 +167,10 @@ def message(data):
     send(content, to=chat)
     chats[chat]['messages'].append(content)
     print(f"{session.get('username')} said: {data['data']}")
-'''
+
 @socketio.on("talk_request")
 def talk_request(see):
-    req_session = 
-'''
+    req_session = session.get('own')
 
 @socketio.on('connect')
 def connect(auth):
