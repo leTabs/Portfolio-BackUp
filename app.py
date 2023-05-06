@@ -89,7 +89,7 @@ def process_signup():
 
 @app.route(f'/find', methods=['GET'])
 def success():
-    #session
+    #session 
     if 'logged_in' not in session:
         return redirect(url_for('login'))
     conn = sqlite3.connect('profiles.db')
@@ -98,7 +98,10 @@ def success():
     usernames = [row[0] for row in cursor.fetchall()]
     conn.close()
     user = session.get('username')
-
+    user_id = str(usernames.index(user) + 1)
+    session['own'] = user_id
+    print('[SESSION OWN]', session.get('own'))
+    print(session['own'])
    # print('[USER_ID]:',  usernames.index(user) + 1 )
     usernames[usernames.index(user)] = user + '  (Me)'
 
@@ -145,15 +148,20 @@ def chat():
         print('[CURRENT SESION]: ', session.get('chat'))
     conn.close()
     return render_template('chatting.html', rec=rec, user=user)
+    
 @socketio.on("message")
 def message(data):
     chat = session.get('chat')
     if chat not in chats: return
-
     content = {'username': session.get('username'), "message": data['data']}
     send(content, to=chat)
     chats[chat]['messages'].append(content)
     print(f"{session.get('username')} said: {data['data']}")
+'''
+@socketio.on("talk_request")
+def talk_request(see):
+    req_session = 
+'''
 
 @socketio.on('connect')
 def connect(auth):
