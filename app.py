@@ -90,17 +90,16 @@ def process_signup():
 @app.route(f'/find', methods=['GET'] )
 def success():
     #session 
+    username = session.get('username')
     if 'logged_in' not in session:
         return redirect(url_for('login'))
     conn = sqlite3.connect('profiles.db')
     cursor = conn.cursor()
     cursor.execute('SELECT username FROM users')
     all_usernames = [row[0] for row in cursor.fetchall()]
-    for i in all_usernames: 
-        if i == session.get('username'):
-           if i not in usernames: 
-               usernames.append(i)
-        print(i)
+    if username == session.get('username'):
+           if username not in usernames:
+               usernames.append(username)
     conn.close()
     user = session.get('username')
     user_id = str(usernames.index(user) + 1)
