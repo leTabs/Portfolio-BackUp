@@ -166,20 +166,22 @@ def message(data):
     chat = session.get('chat')
     if chat not in chats: return
     content = {'username': session.get('username'), "message": data['data']}
-    send(content, to=chat)
+    send(content, to=chat)  
     chats[chat]['messages'].append(content)
     print(f"{session.get('username')} said: {data['data']}")
-'''
+
 @socketio.on("talk_request")
 def talk_request(see):
     field = session.get('rec_field')
-    if session.get('chat') != field:
-        content = {'username': session.get('username')}
-        send(content, to=field)
-        print('[REQUEST ON PROGRESS]: ', '-'*12)
-''' 
-@socketio.on('connect')
-def connect(auth):
+    content = {'username': session.get('username')}
+    send(content, to=field)
+    field['context'] = content
+    print('[REQUEST ON PROGRESS]: ', '-'*12)
+
+
+
+@socketio.on('connect')  
+def connect(auth): 
     chat = session.get('chat')
     username = session.get('username')
     if not chat or not username: return
