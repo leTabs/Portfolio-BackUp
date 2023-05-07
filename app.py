@@ -144,7 +144,8 @@ def chat():
     print('[RECIVER]:', rec)
     print('[RECIVER ID]: ', rec_id)
     print('-'*40)
-    session['field'] = rec_id
+    session['user_field']= user_id
+    session['rec_field']=rec_id
     chat = ''
     if rec_id not in chats:
         print(rec_id , 'NOT IN SESSION')
@@ -168,14 +169,15 @@ def message(data):
     send(content, to=chat)
     chats[chat]['messages'].append(content)
     print(f"{session.get('username')} said: {data['data']}")
-
+'''
 @socketio.on("talk_request")
 def talk_request(see):
-    field = session.get('field')
-    content = {'username': session.get('username')}
-    send(content, to=field)
-    print('[REQUEST ON PROGRESS]: ', '-'*12)
-
+    field = session.get('rec_field')
+    if session.get('chat') != field:
+        content = {'username': session.get('username')}
+        send(content, to=field)
+        print('[REQUEST ON PROGRESS]: ', '-'*12)
+''' 
 @socketio.on('connect')
 def connect(auth):
     chat = session.get('chat')
