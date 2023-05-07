@@ -144,6 +144,7 @@ def chat():
     print('[RECIVER]:', rec)
     print('[RECIVER ID]: ', rec_id)
     print('-'*40)
+    session['field'] = rec_id
     chat = ''
     if rec_id not in chats:
         print(rec_id , 'NOT IN SESSION')
@@ -151,7 +152,7 @@ def chat():
         session['chat'] = chat
         chats[chat] = {"members": 0,  "messages":[]}
         print(chats)
-        print(session.get('chat') )
+        print(session.get('chat'))   
         print('[CURRENT SESION]: ', session.get('chat'))
     elif rec_id in chats:
         session['chat'] = rec_id
