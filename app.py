@@ -157,8 +157,6 @@ def chat():
         session['chat'] = rec_id
         print('[CURRENT SESION]: ', session.get('chat'))
     conn.close()
-    if request.method == 'GET':
-        pass session
     return render_template('chatting.html', rec=rec, user=user)
     
 @socketio.on("message")
@@ -172,7 +170,10 @@ def message(data):
 
 @socketio.on("talk_request")
 def talk_request(see):
-    req_session = session.get('own')
+    field = session.get('field')
+    content = {'username': session.get('username')}
+    send(content, to=field)
+    print('[REQUEST ON PROGRESS]: ', '-'*12)
 
 @socketio.on('connect')
 def connect(auth):
