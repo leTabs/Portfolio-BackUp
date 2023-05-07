@@ -177,12 +177,13 @@ def talk_request(see):
     send(c, to=field)
     field['context'] = c
     print('-'*12, '[REQUEST ON PROGRESS]: ', '-'*12)
+    '''
 @socketio.on('conn')
 def conn(auth):
     field = session.get('rec_field')
     username = session.get('username')
     print(f'{username}: joined the room')
-
+'''
 
 @socketio.on('connect')  
 def connect(auth):   
@@ -196,15 +197,16 @@ def connect(auth):
     send({'username': username, 'message': 'has entered the chat'}, to=chat)
     chats[chat]['members'] += 1
     print(f"{username} joined chat {chat}")
+    print(chats[chat]['members'])
 
-@socketio.on('disconnect')
+@socketio.on('disconnect') 
 def disconnect():
     chat = session.get('chat')
     username = session.get('username' )
     leave_room(chat)
-    if chat not in chats:
-        chats[chat]['members'] =chats[chat]['members'] - 1
-        if chats[chat]['members'] <= 0:
+    if chat is not None:
+        chats[chat]["members"] -= 1
+        if chats[chat]["members"] <= 0:
             del chats[chat]
     send({'username': username, 'message':"has left the chat"}, to=chat)
     print(f"{username} has left the room {chat}")
