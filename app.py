@@ -104,6 +104,7 @@ def success():
     user = session.get('username')
     user_id = str(usernames.index(user) + 1)
     session['own'] = user_id
+    print('')
     #print('[SESSION OWN]', session.get('own'))
     #print(session['own'])
    # print('[USER_ID]:',  usernames.index(user) + 1 )
@@ -156,6 +157,8 @@ def chat():
         session['chat'] = rec_id
         print('[CURRENT SESION]: ', session.get('chat'))
     conn.close()
+    if request.method == 'GET':
+        pass session
     return render_template('chatting.html', rec=rec, user=user)
     
 @socketio.on("message")
