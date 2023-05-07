@@ -20,44 +20,45 @@
     <section class="genSec">
         <nav>
             <h4>Chatting with {{rec}}</h4>
-            <div class="messages" id="messages"></div>
+            
             <button class="newChatButton">End Chat</button>
         </nav>
+        <div class="messages" id="messages"></div>
         <main>
-            <input type="text" placeholder="Type a message">
-            <button onClick="sendMessage()" name="send">Send</button>
+            <input type="text" placeholder="Type a message" name="message" id="message">
+            <button onClick="sendMessage()" name="send" type="button">Send</button>
         </main>
     </section>
-    <script>
-    let socketio = io();
+    <script type="text/javascript">
+        let socketio = io()
+        const messages  = document.getElementById('messages')
 
-    const messages = document.getElementById("messages")
-    
-    const createMessage = (username, msg) =>{
-        const content = `
-        <div>
-            <span>
-                <strong>${name}</strong>: ${msg}
-            </span>
-            <span class="muted">${new Date().toLocaleString()}</span>
-        </div>
-        `
-        messages.innerHTML += content;
-    }
-    socketio.on("message", (data)=>{
-        createMessage(data.username, data.message)
-    })
-    const sendMessage = ()=>{
-        const message = document.getElementById("message")
-        if(message.value == "") return;
-        socketio.emit("message",{data: message.value} )
-        message.value = "" 
-    };
-</script>
-{% for msg in messages %}
-<script>
-    createMessage("{{msg.name}}", "{{msg.message}}")
-</script>
-{% endfor %}
+        const createMessage = (username, msg) =>{
+            const content =`
+            <div class="text">
+                <span>
+                    <strong>${username}</strong>: ${msg}
+                </span>
+                <span class="muted">
+                    ${new Date().toLocaleString()}
+                </span>
+            </div>
+            `
+            messages.innerHTML += content
+        }
+        socketio.on('message', (data) =>{
+            createMessage(data.username, data.message)})
+
+        const sendMessage = () =>{
+            const message = document.getElementById("message");
+            if (message.value == "") return;
+            socketio.emit("message", { data: message.value });
+            message.value = "";}
+    </script>
+    {% for msg in messages %}
+    <script type="text/javascript">
+      createMessage("{{msg.username}}", "{{msg.message}}");
+    </script>
+    {% endfor %}
 </body>
 </html>
