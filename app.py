@@ -5,7 +5,7 @@ from flask_socketio import join_room, leave_room, send, SocketIO, emit
 
 app = Flask(__name__, static_folder='static')
 app.secret_key = os.urandom(16)
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=120)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=120) 
 socketio = SocketIO(app)
 
 chats = {}
@@ -190,7 +190,7 @@ def connect(auth):
     chat = session.get('chat')
     username = session.get('username')
     if not chat or not username: return
-    if chat not in chats:
+    if chat not in chats:  
         leave_room(chat)
         return
     join_room(chat)
