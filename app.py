@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request, session
 import sqlite3, hashlib, os
 from datetime import timedelta
-from flask_socketio import join_room, leave_room, send, SocketIO, emit
+from flask_socketio import join_room, leave_room, send, SocketIO, emit 
 
 app = Flask(__name__, static_folder='static')
 app.secret_key = os.urandom(16)
