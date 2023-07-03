@@ -160,3 +160,14 @@ main button:hover{
 /* resume styling end */
 
 /* portfolio section styling*/
+
+.portfolio-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: solid gray 1px ;
+    margin:0 3rem;
+    /* padding: 2rem; */
+    font-size: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 3px 5px 10px black;
+}
