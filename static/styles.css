@@ -1,1 +1,60 @@
-
+/* border: solid red 1px; */
+html{
+    font-family: Arial, sans-serif;
+}
+nav, body, main{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background:linear-gradient(60deg, rgb(0, 0, 0), rgb(13, 4, 13), black );
+}
+nav, main{
+    height: 100vh;
+}
+/* Navigation bar */
+nav{
+    text-align: center;
+    border-right: solid gray 1px;
+    box-shadow: 3px 3px 14px black;
+}
+.myPhoto{
+    width: 13rem;
+    height: 13rem;
+    margin-top: 2rem;
+    border: solid red 1px;
+    border-radius: 50%;
+    filter:invert(90%);
+}
+.name{
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(47, 211, 240);
+}
+.icons img{
+    width: 2rem;
+    height: 2rem;
+    filter:invert(85%);
+}
+nav hr{
+    width: 85%;
+}
+.nav-links{
+    color: white;
+}
+.nav-links a{
+    display: block;
+    margin:1.2rem 0;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+.nav-links a:first-child{
+    margin-top: 2rem;
+}
+main{
+    color: white;
+}
