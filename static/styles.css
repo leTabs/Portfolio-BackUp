@@ -11,29 +11,35 @@ body{
     padding: 0;
     display: grid;
     grid-template-columns: 1fr 3fr;
-    background:linear-gradient(50deg, rgb(255, 255, 255), rgb(255, 255, 255), rgba(9, 142, 187, 0.663) );
+    overflow-y: hidden;
+    /* background:linear-gradient(50deg, rgb(255, 255, 255), rgb(255, 255, 255), rgba(183, 183, 183, 0.663) ); */
 }
-nav, main{
+nav, main, #home, #about{
     height: 100vh;
+    border: solid transparent 1px;
+}
+main{
+    scroll-behavior: smooth;
 }
 /* Navigation bar */
 nav{
     text-align: center;
     border-right: solid gray 1px;
     box-shadow: 3px 3px 34px 3px black;
+    /* position: fixed; */
 }
 .myPhoto{
     width: 13rem;
     height: 13rem;
     margin-top: 2rem;
-    border: solid red 1px;
+    /* border: solid red 1px; */
     border-radius: 50%;
     /* filter:invert(90%); */
 }
 .name{
     font-size: 2rem;
     font-weight: bold;
-    /* color: rgb(0, 44, 52); */
+    color: rgb(220, 0, 121);
     margin-bottom: 1rem;
 }
 .icons img{
@@ -44,24 +50,29 @@ nav{
 nav hr{
     width: 85%;
 }
-.nav-links{
-    color: rgb(0, 0, 0);
-}
 .nav-links a{
     display: block;
     margin:1.2rem 0;
     font-size: 1.2rem;
     letter-spacing: 2px;
+    transition: 300ms;
 }
 .nav-links a:first-child{
     margin-top: 2rem;
 }
-main h2{
+.nav-links a:hover{
+    cursor: pointer;
+    color: rgb(234, 0, 140);
+}
+main{
+    overflow-y: scroll;
+}
+.introduction{
     /* color: white; */
     font-size: 4rem;
     margin: 15rem 0 0 4rem;
 }
-main p{
+.into-p{
     /* color: rgb(194, 194, 194); */
     font-size: 1.3rem;
     margin-left: 6rem;
@@ -78,4 +89,33 @@ main button{
     outline: transparent;
     border: 1px solid rgb(21, 0, 32);
     border-radius: 25px;
+    transition: 300ms;
+}
+main button:hover{
+    color:rgb(21, 0, 32);
+    background: transparent;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px black;
+}
+/* #home, #about{ */
+    /* border-bottom: solid 1px rgb(255, 40, 194); */
+/* } */
+/* about section */
+
+#about h2{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 8rem;
+}
+.about-div{
+    border: solid gray 1px ;
+    margin:0 3rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 3px 5px 10px black;
+}
+.about-name{
+    color: rgb(234, 0, 140);
+    font-weight: bolder;
 }
