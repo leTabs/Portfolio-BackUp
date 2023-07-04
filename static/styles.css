@@ -109,7 +109,7 @@ main button:hover{
 #about h2, #service h2, #resume h2, #portfolio h2{
     text-align: center;
     font-size: 3rem;
-    margin-top: 8rem;
+    margin-top: 6rem;
 }
 .about-div, .service-div, .resume-div{
     border: solid gray 1px ;
@@ -170,4 +170,25 @@ main button:hover{
     font-size: 1.5rem;
     border-radius: 15px;
     box-shadow: 3px 5px 10px black;
+}
+.project{
+    /* width: 5rem; */
+    /* height: 5rem; */
+    border: solid rgb(0, 68, 255) 1px;
+    margin:0.5rem;
+}
+.project-container{
+    width: 10rem;
+    height: 5rem;
+    border: solid red 1px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.project-img{
+    object-fit: contain;
+}
+.utility-icon{
+    width: 3rem;
+    height: 3rem;
+    border: solid rgb(0, 255, 38) 1px
 }
