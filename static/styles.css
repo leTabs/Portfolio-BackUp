@@ -178,14 +178,18 @@ main button:hover{
     margin:0.5rem;
 }
 .project-container{
-    width: 10rem;
-    height: 5rem;
+    /* width: 10rem; */
+    height:10rem;
     border: solid red 1px;
-    object-fit: cover;
-    margin: 0 auto;
+    margin: 0.5rem auto;
+    width: 90%;
 }
 .project-img{
-    object-fit: contain;
+    border: solid rgb(0, 255, 242) 1px;
+    width: 50%;
+    display: inline-block;
+    margin: 0 auto;
+    
 }
 .utility-icon{
     width: 3rem;
