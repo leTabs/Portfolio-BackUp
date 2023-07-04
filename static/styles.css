@@ -198,7 +198,7 @@ main button:hover{
     /* remove the filter */
     /* filter: opacity(0.1) */
 }
-.project-img:hover{
+.project-container:hover .project-img{
     transform: scale(120%);
     filter:blur(6px);
 }
@@ -213,9 +213,14 @@ main button:hover{
 }
 .project-container:hover .utility-icon{
     display: inline;
-    filter:invert(80%)
+    transition: 200ms;
+}
+.utility-icon:hover{
+    cursor: pointer;
+    filter: invert(90%);
 }
 .project p{
     margin: 0;
     padding: 0;
+    color: rgb(234, 0, 140);
 }
