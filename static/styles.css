@@ -181,27 +181,39 @@ main button:hover{
 .project-container{
     /* width: 10rem; */
     height:10rem;
-    border: solid red 1px;
+    border: solid gray 1px;
     margin: 0.5rem auto;
     width: 90%;
     object-fit: cover;
     overflow: hidden;
+    box-shadow: 3px 5px 10px black;
+    border-radius: 15px;
 }
 .project-img{
-    border: solid rgb(0, 255, 242) 1px;
+    /* border: solid rgb(0, 255, 242) 1px; */
     width: 100%;
     margin: auto;
     height: 100%;
     transition: 300ms;
+    /* remove the filter */
+    /* filter: opacity(0.1) */
 }
 .project-img:hover{
     transform: scale(120%);
-    filter:blur(5px);
+    filter:blur(6px);
 }
 .utility-icon{
-    width: 3rem;
-    height: 3rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    position: relative;
+    top: -45%;
+    margin:0 0.5rem;
     /* border: solid rgb(0, 255, 38) 1px */
+    display: none;
+}
+.project-container:hover .utility-icon{
+    display: inline;
+    filter:invert(80%)
 }
 .project p{
     margin: 0;
