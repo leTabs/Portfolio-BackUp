@@ -176,6 +176,7 @@ main button:hover{
     /* height: 5rem; */
     border: solid rgb(0, 68, 255) 1px;
     margin:0.5rem;
+    text-align: center;
 }
 .project-container{
     /* width: 10rem; */
@@ -186,9 +187,10 @@ main button:hover{
 }
 .project-img{
     border: solid rgb(0, 255, 242) 1px;
-    width: 50%;
-    display: inline-block;
-    margin: 0 auto;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    object-fit: cover;
     
 }
 .utility-icon{
