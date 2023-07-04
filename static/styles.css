@@ -224,3 +224,42 @@ main button:hover{
     padding: 0;
     color: rgb(234, 0, 140);
 }
+/* contact */
+.contact-div{
+    text-align: center;
+}
+.contact-div img{
+    margin: 0 auto;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+}
+.contact-form{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 3;
+    text-align: left;
+    margin-top: 4rem;
+    /* border: solid rgb(0, 30, 255) 1px; */
+    padding:1.5rem
+}
+.contact-form p{
+    /* border: solid red 1px; */
+    border-bottom: solid gray 1px;
+    margin:0;
+    padding:0.7rem 0 0.4rem 0;
+}
+.info-type{
+    /* width: 50%    */
+    color: rgb(234, 0, 140);
+    margin-left: 1rem;
+    font-weight: bold;
+}
+.contact-form button{
+    margin:0;
+    margin-left: 3.5rem;
+    padding: 0.3;
+}
+.sep{
+    color: rgb(234, 0, 140);
+}
