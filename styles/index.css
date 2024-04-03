@@ -195,17 +195,27 @@ nav p:hover{
     border-bottom: solid 1px black;
 }
 .skills-wrapper{
-    border: solid blue;
-    padding: 0 5rem 2rem 5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 75%;
-    margin: 0 auto;
+    /* border-bottom: solid 1px; */
+    padding: 0 5rem 1rem 5rem;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    width: calc(100% - 13.4rem);
+    display: flex;
+    justify-content: space-between;
+    margin: 0  0 0 1.7rem;
 }
 .current-skill{
-    /* border: solid red; */
+    border-bottom: solid rgb(0, 0, 0) 1px;
+    width: 100%;
+    margin: 0 1.5rem;
+    text-align: center;
 }
 .current-skill img{
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
+    height: 5rem;
+}
+.current-skill p{
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
 }
