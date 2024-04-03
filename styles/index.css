@@ -183,7 +183,6 @@ nav p:hover{
 }
 /* section skills */
 .section-skills{
-    border: solid 1px red;
     height: 100vh;
 }
 .section-skills h3{
@@ -194,4 +193,19 @@ nav p:hover{
     word-spacing: 0.3rem;
     padding: 0 1.3rem 1.5rem 1.3rem;
     border-bottom: solid 1px black;
+}
+.skills-wrapper{
+    border: solid blue;
+    padding: 0 5rem 2rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 75%;
+    margin: 0 auto;
+}
+.current-skill{
+    /* border: solid red; */
+}
+.current-skill img{
+    width: 3rem;
+    height: 3rem;
 }
