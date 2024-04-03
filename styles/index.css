@@ -183,39 +183,51 @@ nav p:hover{
 }
 /* section skills */
 .section-skills{
-    height: 100vh;
+    /* height: 100vh; */
 }
 .section-skills h3{
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 2.75rem;
-    margin: 3rem  0 2rem 1.7rem;
+    /* margin: 3rem  0 2rem 1.7rem; */
+    margin: 3rem auto 2rem auto;
+    text-align: center;
+    width: calc(100% - 13.4rem);
     letter-spacing: 0.15rem;
     word-spacing: 0.3rem;
     padding: 0 1.3rem 1.5rem 1.3rem;
     border-bottom: solid 1px black;
 }
 .skills-wrapper{
-    /* border-bottom: solid 1px; */
     padding: 0 5rem 1rem 5rem;
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr 1fr; */
     width: calc(100% - 13.4rem);
     display: flex;
     justify-content: space-between;
-    margin: 0  0 0 1.7rem;
+    margin: 4rem  0 0 1.7rem;
 }
 .current-skill{
-    border-bottom: solid rgb(0, 0, 0) 1px;
+    /* border-bottom: solid rgb(0, 0, 0) 1px; */
     width: 100%;
-    margin: 0 1.5rem;
+    margin: 0;
     text-align: center;
 }
 .current-skill img{
-    width: 5rem;
-    height: 5rem;
+    width: 8rem;
+    height: 8rem;
 }
 .current-skill p{
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
     line-height: 2rem;
+}
+.skills-tech{
+    border-top: solid 1px;
+    margin: 0rem auto 8rem auto;
+    width: 75%;
+    padding: 2.5rem 0 0 0 ;
+    display: flex;
+    justify-content: space-evenly;
+}
+.skills-tech img{
+    width: 3.5rem;
+    height: 3.5rem;
 }
