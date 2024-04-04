@@ -9,8 +9,11 @@ const navCommunication = document.querySelector('.nav-communication')
 const sectionHome = document.querySelector('.section-home')
 const sectionMyWork = document.querySelector('.section-my-work')
 const sectionSkills = document.querySelector('.section-skills')
+const sectionCommunication = document.querySelector('.section-communication')
 
-const alertsArray = [homeViewCvBtn, navCommunication]
+// contact elements
+const contactCertifications = document.querySelector('.contact-certifications')
+const alertsArray = [homeViewCvBtn]
 
 for(let i = 0; i < alertsArray.length; i++){
     alertsArray[i].addEventListener('click', ()=>{
@@ -27,4 +30,7 @@ navMyWork.addEventListener('click', ()=>{
 })
 navSkills.addEventListener('click', ()=>{
     sectionSkills.scrollIntoView()
+})
+navCommunication.addEventListener('click', ()=>{
+    sectionCommunication.scrollIntoView()
 })
