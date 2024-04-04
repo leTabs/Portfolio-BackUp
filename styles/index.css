@@ -185,7 +185,7 @@ nav p:hover{
 .section-skills{
     /* height: 100vh; */
 }
-.section-skills h3{
+.section-skills h3, .section-communication h3{
     /* display: inline-block; */
     font-size: 2.75rem;
     /* margin: 3rem  0 2rem 1.7rem; */
@@ -230,4 +230,86 @@ nav p:hover{
 .skills-tech img{
     width: 3.5rem;
     height: 3.5rem;
+}
+/* section communication */
+/* h3 is with skills section */
+
+.section-communication{
+    /* padding: 5rem 0 0 0; */
+    /* border: solid 1px; */
+    height: auto;
+}
+.contact-container{
+    /* margin-top:  4rem; */
+    width: calc(100% - 14rem);
+    /* background-color: rgb(41, 41, 41); */
+    background: linear-gradient(90deg, rgb(10, 10, 10), rgb(20, 20, 20), rgb(10, 10, 10));
+    padding: 2rem 7rem 1rem 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: inset 5px 5px 15px black;
+}
+.contact-container div{
+    width: 90%;
+    padding: 1rem 0 0.5rem 1.5rem;
+    margin: 1rem 0 0.5rem 0;
+    border-left: solid white 2px;
+}
+.contact-container span{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+.contact-container h4{
+    margin: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: 0.05rem;
+    word-spacing: 0.5rem;
+    color: rgb(212, 211, 211)
+}
+.contact-container p{
+    margin: 0;
+    margin-left: 0.8rem;
+    color: white;
+    display: inline;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.3rem;
+    line-height: 1.7rem;
+    transition: 250ms;
+    cursor: pointer;
+}
+.contact-container p:hover{
+    color: rgb(139, 139, 139);
+}
+.contact-container img{
+    width: 1rem;
+    height: 1rem;
+    filter: invert(100%);
+}
+/*  */
+footer{
+    background-color: rgb(7, 7, 7);
+}
+footer p{
+    margin: 0;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    box-shadow: 0px -3px 10px rgb(7, 7, 7);
+    letter-spacing: 0.1rem;
+}
+footer p a{
+    color: rgb(185, 185, 185);
+    transition: 250ms;
+}
+footer p a:visited{
+    color: rgb(185, 185, 185)
+}
+footer p a:hover{
+    color: rgb(139, 139, 139);
+
 }
