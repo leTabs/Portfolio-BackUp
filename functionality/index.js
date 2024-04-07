@@ -19,6 +19,7 @@ const certificateContainer = document.querySelector('.certificate-container')
 const cpi01 = document.querySelector('.cpi-01')
 const cpi02 = document.querySelector('.cpi-02')
 const cpi03 = document.querySelector('.cpi-03')
+const certificateImg = document.querySelector('.certificate-img')
 
 // 
 const alertsArray = [homeViewCvBtn]
@@ -54,25 +55,78 @@ contactCertifications.addEventListener('click', ()=>{
     }, 1)
 })
 
+
+// minus-solid.svg
+let certificationSwitch = false
+
+function imgFrameOpener(){
+    certificateContainer.style.display = 'flex';
+    cpi03.src = 'images/minus-solid.svg'
+    certificationSwitch = true
+    setTimeout(()=>{
+        certificateContainer.style.width = '90%'
+        certificateContainer.style.height = '40vh'
+        certificateContainer.style.marginTop = '2rem'
+    }, 1)
+    setTimeout(()=>{
+        certificateImg.style.display = 'block'
+    setTimeout(()=>{
+        certificateImg.style.opacity = '1'
+    },1)
+    }, 250)
+}
+
+function imgFrameCloser(){
+    cpi03.src = 'images/plus-solid.svg'
+    certificationSwitch = false
+    setTimeout(()=>{
+        certificateImg.style.opacity = '0'
+        setTimeout(()=>{
+            certificateImg.style.display = 'none'
+        }, 250)
+        setTimeout(()=>{
+            certificateContainer.style.width = '0%'
+            certificateContainer.style.height = '0vh'
+            certificateContainer.style.marginTop = '0'
+            setTimeout(()=>{
+                certificateContainer.style.display = 'none';
+            }, 250)
+        },1)
+    }, 1)
+}
+
+
 certificationsCloseBtn.addEventListener('click', ()=>{
     certificationsContainer.style.top = '55%'
     certificationsContainer.style.opacity = '0'
     setTimeout(()=>{
         certificationsContainer.style.top = '50%'
         certificationsContainer.style.display = 'none'
+        imgFrameCloser()
     }, 250)
 })
 // 
-cpi01.addEventListener('click', ()=>{alert('cpi1')})
-cpi02.addEventListener('click', ()=>{alert('cpi2')})
-
-// certificate opening
+cpi01.addEventListener('click', ()=>{
+    if(!certificationSwitch){
+        imgFrameOpener()
+    }
+    else{
+        imgFrameCloser()
+    }
+})
+cpi02.addEventListener('click', ()=>{
+    if(!certificationSwitch){
+        imgFrameOpener()
+    }
+    else{
+        imgFrameCloser()
+    }   
+})
 cpi03.addEventListener('click', ()=>{
-    certificateContainer.style.display = 'block';
-    // just change the src value of the image + add a switch for knowing when to display and when to close
-    setTimeout(()=>{
-        certificateContainer.style.width = '90%'
-        certificateContainer.style.height = '40vh'
-        certificateContainer.style.marginTop = '2rem'
-    }, 1)
+    if(!certificationSwitch){
+        imgFrameOpener()
+    }
+    else{
+        imgFrameCloser()
+    }
 })
