@@ -121,18 +121,14 @@ nav p:hover{
     padding-top: 5rem;
 }
 .project-container{
-    /* border: solid 1px rgb(2, 185, 185); */
     display: grid;
     grid-template-columns: 0.75fr 1fr;
     margin: 2.5rem 0;
     margin-bottom: 5rem;
+    height: fit-content;
 }
 .project-container:nth-of-type(2){
     grid-template-columns: 1fr 0.75fr;
-}
-.project-text-container{
-    /* border: solid 1px yellow; */
-    height: fit-content;
 }
 .project-text-container h3{
     font-size: 2.75rem;
@@ -182,9 +178,6 @@ nav p:hover{
     object-fit: cover;
 }
 /* section skills */
-.section-skills{
-    /* height: 100vh; */
-}
 .section-skills h3, .section-communication h3{
     /* display: inline-block; */
     font-size: 2.75rem;
@@ -235,14 +228,10 @@ nav p:hover{
 /* h3 is with skills section */
 
 .section-communication{
-    /* padding: 5rem 0 0 0; */
-    /* border: solid 1px; */
     height: auto;
 }
 .contact-container{
-    /* margin-top:  4rem; */
     width: calc(100% - 14rem);
-    /* background-color: rgb(41, 41, 41); */
     background: linear-gradient(90deg, rgb(10, 10, 10), rgb(20, 20, 20), rgb(10, 10, 10));
     padding: 2rem 7rem 1rem 7rem;
     display: grid;
@@ -281,7 +270,16 @@ nav p:hover{
     transition: 250ms;
     cursor: pointer;
 }
-.contact-container p:hover{
+.contact-container p a,
+.contact-container p a:visited,
+.contact-container p a:after{
+    color: white;
+    text-decoration: none;
+    transition: 250ms;
+}
+
+.contact-certifications:hover,
+.contact-container span p a:hover{
     color: rgb(139, 139, 139);
 }
 .contact-container img{
@@ -335,7 +333,7 @@ footer p a:hover{
     left: 50%;
     border: solid 10px rgb(0, 0, 0);
     background-color: white;
-    /* display: none; */
+    display: none;
     animation: containerPoping 0.25s linear forwards;
     transition: 250ms;
 }
