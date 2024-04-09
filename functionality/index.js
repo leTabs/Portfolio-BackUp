@@ -51,7 +51,14 @@ contactCertifications.addEventListener('click', ()=>{
     setTimeout(()=>{
     certificationsContainer.style.opacity = '1'
     }, 1)
+
 })
+
+let certificationSwitch = false
+let cpiSwitcher01 = false
+let cpiSwitcher02 = false
+let cpiSwitcher03 = false
+const switcherArray = [cpiSwitcher01, cpiSwitcher02, cpiSwitcher03]
 
 certificationsCloseBtn.addEventListener('click', ()=>{
     certificationsContainer.style.top = '55%'
@@ -60,13 +67,32 @@ certificationsCloseBtn.addEventListener('click', ()=>{
         certificationsContainer.style.top = '50%'
         certificationsContainer.style.display = 'none'
     }, 250)
+    
+    certificationSwitch = false
+    setTimeout(()=>{
+        certificateImg.style.opacity = '0'
+        setTimeout(()=>{
+            certificateImg.style.display = 'none'
+        }, 250)
+        setTimeout(()=>{
+            certificateContainer.style.width = '0%'
+            certificateContainer.style.height = '0vh'
+            certificateContainer.style.marginTop = '0'
+            setTimeout(()=>{
+                certificateContainer.style.display = 'none';
+                cpiSwitcher01 = false
+                cpiSwitcher01 = false
+                cpiSwitcher01 = false
+                cpi01.src = 'images/plus-solid.svg'
+                cpi02.src = 'images/plus-solid.svg'
+                cpi03.src = 'images/plus-solid.svg'
+            }, 250)
+        },1)
+    }, 1)
+
 })
 // 
-let certificationSwitch = false
-let cpiSwitcher01 = false
-let cpiSwitcher02 = false
-let cpiSwitcher03 = false
-const switcherArray = [cpiSwitcher01, cpiSwitcher02, cpiSwitcher03]
+
 
 
 function imgFrameOpener(icon, iconValue, switcherIndex){
@@ -111,7 +137,6 @@ function imgFrameOpener(icon, iconValue, switcherIndex){
 
 function imgFrameCloser(icon, iconValue, switcherIndex){
     icon.src = `images/${iconValue}`
-
     if(switcherIndex === 0){
         cpiSwitcher01 = false
     }
