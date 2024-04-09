@@ -23,13 +23,11 @@ const certificateImg = document.querySelector('.certificate-img')
 
 // 
 const alertsArray = [homeViewCvBtn]
-
 for(let i = 0; i < alertsArray.length; i++){
     alertsArray[i].addEventListener('click', ()=>{
         alert('comming soon')
     })
 }
-
 
 // scroll in to view functionalities
 navHome.addEventListener('click', ()=>{
@@ -55,26 +53,15 @@ contactCertifications.addEventListener('click', ()=>{
     }, 1)
 })
 
-
-// minus-solid.svg
-
-
-
 certificationsCloseBtn.addEventListener('click', ()=>{
     certificationsContainer.style.top = '55%'
     certificationsContainer.style.opacity = '0'
     setTimeout(()=>{
         certificationsContainer.style.top = '50%'
         certificationsContainer.style.display = 'none'
-        imgFrameCloser()
     }, 250)
 })
 // 
-
-
-
-
-
 let certificationSwitch = false
 let cpiSwitcher01 = false
 let cpiSwitcher02 = false
@@ -84,8 +71,14 @@ const switcherArray = [cpiSwitcher01, cpiSwitcher02, cpiSwitcher03]
 
 function imgFrameOpener(icon, iconValue, switcherIndex){
     certificateContainer.style.display = 'flex';
-    // cpi03.src = 'images/minus-solid.svg'
+    cpi01.src = 'images/plus-solid.svg'
+    cpi02.src = 'images/plus-solid.svg'
+    cpi03.src = 'images/plus-solid.svg'
     icon.src = `images/${iconValue}`
+
+    cpiSwitcher01 = false
+    cpiSwitcher02 = false
+    cpiSwitcher03 = false
 
     if(switcherIndex === 0){
         cpiSwitcher01 = true
@@ -117,7 +110,6 @@ function imgFrameOpener(icon, iconValue, switcherIndex){
 }
 
 function imgFrameCloser(icon, iconValue, switcherIndex){
-    // cpi03.src = 'images/plus-solid.svg'
     icon.src = `images/${iconValue}`
 
     if(switcherIndex === 0){
