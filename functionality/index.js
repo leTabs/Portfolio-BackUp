@@ -57,11 +57,49 @@ contactCertifications.addEventListener('click', ()=>{
 
 
 // minus-solid.svg
-let certificationSwitch = false
 
-function imgFrameOpener(){
+
+
+certificationsCloseBtn.addEventListener('click', ()=>{
+    certificationsContainer.style.top = '55%'
+    certificationsContainer.style.opacity = '0'
+    setTimeout(()=>{
+        certificationsContainer.style.top = '50%'
+        certificationsContainer.style.display = 'none'
+        imgFrameCloser()
+    }, 250)
+})
+// 
+
+
+
+
+
+let certificationSwitch = false
+let cpiSwitcher01 = false
+let cpiSwitcher02 = false
+let cpiSwitcher03 = false
+const switcherArray = [cpiSwitcher01, cpiSwitcher02, cpiSwitcher03]
+
+
+function imgFrameOpener(icon, iconValue, switcherIndex){
     certificateContainer.style.display = 'flex';
-    cpi03.src = 'images/minus-solid.svg'
+    // cpi03.src = 'images/minus-solid.svg'
+    icon.src = `images/${iconValue}`
+
+    if(switcherIndex === 0){
+        cpiSwitcher01 = true
+        certificateImg.src = `images/434324612_439021462128549_8148424250643466221_n.jpg`
+    }
+    else if(switcherIndex === 1){
+        cpiSwitcher02 = true
+        certificateImg.src = `images/Screenshot 2024-04-02 223035.png`
+    }
+    else{
+        cpiSwitcher03 = true
+        certificateImg.src = `images/pexels-myburgh-roux-1102797.jpg`
+    }
+
     certificationSwitch = true
     setTimeout(()=>{
         certificateContainer.style.width = '90%'
@@ -74,10 +112,20 @@ function imgFrameOpener(){
         certificateImg.style.opacity = '1'
     },1)
     }, 250)
+
+
 }
 
-function imgFrameCloser(){
-    cpi03.src = 'images/plus-solid.svg'
+function imgFrameCloser(icon, iconValue, switcherIndex){
+    // cpi03.src = 'images/plus-solid.svg'
+    icon.src = `images/${iconValue}`
+
+    if(switcherIndex === 0){
+        cpiSwitcher01 = false
+    }
+    else if(switcherIndex === 1){cpiSwitcher02 = false}
+    else{cpiSwitcher03 = false}
+
     certificationSwitch = false
     setTimeout(()=>{
         certificateImg.style.opacity = '0'
@@ -96,37 +144,28 @@ function imgFrameCloser(){
 }
 
 
-certificationsCloseBtn.addEventListener('click', ()=>{
-    certificationsContainer.style.top = '55%'
-    certificationsContainer.style.opacity = '0'
-    setTimeout(()=>{
-        certificationsContainer.style.top = '50%'
-        certificationsContainer.style.display = 'none'
-        imgFrameCloser()
-    }, 250)
-})
-// 
 cpi01.addEventListener('click', ()=>{
-    if(!certificationSwitch){
-        imgFrameOpener()
+    if(!cpiSwitcher01){
+        imgFrameOpener(cpi01, 'minus-solid.svg', 0)
+
     }
     else{
-        imgFrameCloser()
+        imgFrameCloser(cpi01, 'plus-solid.svg', 0)
     }
 })
 cpi02.addEventListener('click', ()=>{
-    if(!certificationSwitch){
-        imgFrameOpener()
+    if(!cpiSwitcher02){
+        imgFrameOpener(cpi02, 'minus-solid.svg', 1)
     }
     else{
-        imgFrameCloser()
+        imgFrameCloser(cpi02, 'plus-solid.svg', 1)
     }   
 })
 cpi03.addEventListener('click', ()=>{
-    if(!certificationSwitch){
-        imgFrameOpener()
+    if(!cpiSwitcher03){
+        imgFrameOpener(cpi03, 'minus-solid.svg', 2)
     }
     else{
-        imgFrameCloser()
+        imgFrameCloser(cpi03, 'plus-solid.svg', 2)
     }
 })
