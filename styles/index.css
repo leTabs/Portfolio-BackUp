@@ -127,7 +127,8 @@ nav p:hover{
     margin-bottom: 5rem;
     height: fit-content;
 }
-.project-container:nth-of-type(2){
+.project-container:nth-of-type(2),
+.project-container:nth-of-type(4){
     grid-template-columns: 1fr 0.75fr;
 }
 .project-text-container h3{
@@ -166,6 +167,15 @@ nav p:hover{
     background-color: rgb(37, 37, 37);
     color: white;
 }
+.project-container button a{
+    transition: 250ms;
+    color: black;
+    text-decoration: none;
+}
+
+.project-container button:hover a{
+    color: white;
+}
 .project-img-container{
     display: flex;
     justify-content: center;
@@ -176,6 +186,7 @@ nav p:hover{
     height: 100%;
     border-radius: 50px;
     object-fit: cover;
+    /* border: solid 1px black; */
 }
 /* section skills */
 .section-skills h3, .section-communication h3{
@@ -268,7 +279,7 @@ nav p:hover{
     word-spacing: 0.3rem;
     line-height: 1.7rem;
     transition: 250ms;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .contact-container p a,
 .contact-container p a:visited,
@@ -281,6 +292,7 @@ nav p:hover{
 .contact-certifications:hover,
 .contact-container span p a:hover{
     color: rgb(139, 139, 139);
+    cursor: pointer;
 }
 .contact-container img{
     width: 1rem;
