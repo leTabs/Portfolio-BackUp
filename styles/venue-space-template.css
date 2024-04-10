@@ -55,7 +55,7 @@ nav p:hover{
     border-bottom-color: white;
 }
 /* sections */
-section{
+.section-general-desc{
     padding-top: 5rem;
 }
 .description{
@@ -66,16 +66,16 @@ section{
         letter-spacing: 0.1rem;
 }
 .template-display{
-    border: solid 1px red;
+    border-top: solid 1px rgb(0, 0, 0);
     padding-top: 5rem;
 }
-.display-img-description-pair{
-    border: solid 1px rgb(0, 217, 255);
+.display-img-description-pair,
+.template-display-btn-container{
     display: grid;
-    grid-template-columns: 1.5fr 0.5fr;
+    grid-template-columns: 1.35fr 0.5fr;
 }
 .display-img-wrapper{
-    border: solid yellow 1px;
+    /* border: solid yellow 1px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,13 +86,44 @@ section{
 }
 .display-text-wrapper{
     /* background-color: red; */
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .display-img-description-pair p{
-    padding: 1rem 0;
-    width: 90%;
-    text-align: center;
+    width: 75%;
+    color: white;
+    text-align: justify;
+    font-size: 1.35rem;
+    padding-bottom: 2.5rem;
+    letter-spacing: 0.05rem;
+    border-bottom: solid gray 1px;
 }
 
+.template-display-btn-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.template-display-btn-container button{
+    font-size: 1rem;
+    width: 15vw;
+    padding: 0.4rem 0;
+    border: solid 2px;
+    color: white;
+    background-color: rgb(36, 36, 36);
+    transition: 250ms;
+    cursor: pointer;
+}
+.template-display-btn-container button:hover{
+    background-color: rgb(0, 0, 0);
+}
+.template-display-btn-container button:first-of-type{
+    border-radius: 20px 0 0 20px;
+}
+.template-display-btn-container button:nth-of-type(2){
+    border-radius: 0 20px 20px 0;
+}
 
 
 /* it uses the same css as the h3 in the home page sections */
