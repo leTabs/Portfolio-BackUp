@@ -11,6 +11,9 @@ const sectionMyWork = document.querySelector('.section-my-work')
 const sectionSkills = document.querySelector('.section-skills')
 const sectionCommunication = document.querySelector('.section-communication')
 
+// projects elements
+// const projectBtn01 = document.querySelector('.project-btn-01')
+
 // contact elements
 const contactCertifications = document.querySelector('.contact-certifications')
 const certificationsContainer = document.querySelector('.certifications-container')
@@ -42,6 +45,13 @@ navSkills.addEventListener('click', ()=>{
 navCommunication.addEventListener('click', ()=>{
     sectionCommunication.scrollIntoView()
 })
+
+// projects listeners
+// projectBtn01.addEventListener('click', ()=>{
+//     alert('pop')
+// })
+
+
 
 
 // contact (animation & opening/closing funcionality)
