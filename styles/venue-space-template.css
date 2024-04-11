@@ -196,15 +196,17 @@ section h3{
 }
 .img-container{
     width: calc(70% - 4rem);
-    height: 70vh;
+    height: 1vh;
     background-color: rgb(196, 196, 196);
     margin: 0.25rem auto 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 0rem 2rem;
+    transition: 250ms;
 }
 .img-container img{
+    display: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
