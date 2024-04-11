@@ -23,13 +23,39 @@ navGallery.addEventListener('click', ()=>{
     sectionTemplateAllImgs.scrollIntoView()
 })
 
+
+// images/plus-solid.svg
+// images/minus-solid.svg
+// image displaying
+
+let imageDisplaySwitchArray = [false, false, false, false, false]
+
+function imageOpener(iterator){
+        imgFrameArray[iterator].style.height = '70vh'
+        imgFrameArray[iterator].style.padding = '2rem 2rem'
+        expandHideBtnArray[iterator].src = 'images/minus-solid.svg'
+        imageDisplaySwitchArray[iterator] = true
+        setTimeout(()=>{
+            templateImgArray[iterator].style.display = 'block'
+        }, 250)
+}
+
+function imageCloser(iterator){
+    templateImgArray[iterator].style.display = 'none'
+    expandHideBtnArray[iterator].src = 'images/plus-solid.svg'
+    imageDisplaySwitchArray[iterator] = false
+    setTimeout(()=>{
+        imgFrameArray[iterator].style.height = '1vh'
+        imgFrameArray[iterator].style.padding = '0rem 2rem'
+    }, 250)
+}
+
 for(let i = 0; i < expandHideBtnArray.length; i++){
     expandHideBtnArray[i].addEventListener('click', ()=>{
-        imgFrameArray[i].style.height = '70vh'
-        imgFrameArray[i].style.padding = '2rem 2rem'
-        
-        setTimeout(()=>{
-            templateImgArray[i].style.display = 'inline'
-        }, 250)
+        if(!imageDisplaySwitchArray[i]){
+            imageOpener(i)
+        }else{
+            imageCloser(i)
+        }
     })
 }
