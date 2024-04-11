@@ -12,6 +12,10 @@ const navGallery = document.querySelector('.nav-gallery')
 const expandHideBtnArray = document.querySelectorAll('.expand-hide-icon')
 const imgFrameArray = document.querySelectorAll('.img-container')
 const templateImgArray = document.querySelectorAll('.template-img')
+// 
+const expandAllBtn = document.querySelector('.expand-all-btn')
+const collapseAllBtn = document.querySelector('.collapse-all-btn')
+
 
 navOverview.addEventListener('click', ()=>{
     templateDisplay.scrollIntoView()
@@ -24,8 +28,7 @@ navGallery.addEventListener('click', ()=>{
 })
 
 
-// images/plus-solid.svg
-// images/minus-solid.svg
+
 // image displaying
 
 let imageDisplaySwitchArray = [false, false, false, false, false]
@@ -59,3 +62,29 @@ for(let i = 0; i < expandHideBtnArray.length; i++){
         }
     })
 }
+
+expandAllBtn.addEventListener('click', ()=>{
+    for(let i = 0; i < expandHideBtnArray.length; i++){
+        imgFrameArray[i].style.height = '70vh'
+        imgFrameArray[i].style.padding = '2rem 2rem'
+        expandHideBtnArray[i].src = 'images/minus-solid.svg'
+        imageDisplaySwitchArray[i] = true
+        
+        setTimeout(()=>{
+            templateImgArray[i].style.display = 'block'
+        }, 250)
+    }
+})
+
+
+collapseAllBtn.addEventListener('click', ()=>{
+    for(let i = 0; i < expandHideBtnArray.length; i++){
+        templateImgArray[i].style.display = 'none'
+        expandHideBtnArray[i].src = 'images/plus-solid.svg'
+        imageDisplaySwitchArray[i] = false
+        setTimeout(()=>{
+            imgFrameArray[i].style.height = '1vh'
+            imgFrameArray[i].style.padding = '0rem 2rem'
+        }, 250)
+    }
+})
