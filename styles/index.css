@@ -5,6 +5,17 @@ html, section, main, body{
     margin: 0;
     padding: 0;
 }
+
+::-webkit-scrollbar{
+    background-color: rgb(68, 68, 68);
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(19, 19, 19);
+}
+::-webkit-scrollbar-button{
+    display: none;
+}
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -15,6 +26,7 @@ nav{
     color: white;
     position: fixed;
     width: 100%;
+    z-index: 10;
 }
 nav div{
     display: flex;
@@ -34,6 +46,10 @@ nav div:first-of-type img{
 nav h2{
 font-size: 2.2rem;
 }
+.nav-left{
+    animation: slider 0.5s linear forwards;
+    cursor: pointer;
+}
 nav div:nth-of-type(2){
     margin-right: 5rem;
 }
@@ -47,7 +63,7 @@ nav p{
 }
 nav p:hover{
     border-bottom-color: white;
-}
+}           
 /*  */
 .section-home{
     height: 100vh;
@@ -64,6 +80,15 @@ nav p:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: opening-left-div 0.5s linear forwards;
+}
+@keyframes opening-left-div {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .home-left-div-text-wrapper{
     border: solid 2px rgb(0, 0, 0);
@@ -84,11 +109,11 @@ nav p:hover{
     width: 80%
 }
 .home-left-div-text-wrapper p{
-    width: 70%;
+    width: 80%;
     margin: 2rem auto 0 auto;
     font-size: 1.35rem;
     letter-spacing: 0.05rem;
-    text-align: justify;
+    text-align: center;
 }
 .home-left-div-text-wrapper button{
     margin: 2rem 0 4rem 0;
@@ -109,6 +134,15 @@ nav p:hover{
 .home-right-div img{
     width: 100%;
     height: 100%;
+    animation: opening-right-div 0.5s linear forwards
+}
+@keyframes opening-right-div {
+    0%{
+        filter: saturate(0%);
+    }
+    100%{
+        filter: saturate(100%)
+    }
 }
 /*  */
 .intern-hr{
@@ -151,29 +185,23 @@ nav p:hover{
     margin: 1.5rem auto;
     text-align: justify;
     letter-spacing: 0.1rem;
-    /* word-spacing: 0.2rem; */
 }
-.project-container button{
+.project-container a{
     font-size: 1.1rem;
     padding: 0.5rem 2.5rem;
     display: block;
     margin: 3rem auto 2rem auto;
     border: solid 1px rgb(37, 37, 37);
     background-color: white;
-    transition: 250ms;
-    cursor: pointer;
-}
-.project-container button:hover{
-    background-color: rgb(37, 37, 37);
-    color: white;
-}
-.project-container button a{
-    transition: 250ms;
     color: black;
     text-decoration: none;
+    transition: 250ms;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
 }
-
-.project-container button:hover a{
+.project-container a:hover{
+    background-color: rgb(37, 37, 37);
     color: white;
 }
 .project-img-container{
@@ -183,16 +211,15 @@ nav p:hover{
 }
 .project-img-container img{
     width: 90%;
-    height: 100%;
-    border-radius: 50px;
+    height: 90%;
+    border-radius: 40px;
     object-fit: cover;
-    /* border: solid 1px black; */
+    border: solid 1px gray;
 }
+
 /* section skills */
-.section-skills h3, .section-communication h3{
-    /* display: inline-block; */
+.section-skills h3{
     font-size: 2.75rem;
-    /* margin: 3rem  0 2rem 1.7rem; */
     margin: 3rem auto 2rem auto;
     text-align: center;
     width: calc(100% - 13.4rem);
@@ -209,7 +236,6 @@ nav p:hover{
     margin: 4rem  0 0 1.7rem;
 }
 .current-skill{
-    /* border-bottom: solid rgb(0, 0, 0) 1px; */
     width: 100%;
     margin: 0;
     text-align: center;
@@ -236,7 +262,6 @@ nav p:hover{
     height: 3.5rem;
 }
 /* section communication */
-/* h3 is with skills section */
 
 .section-communication{
     height: auto;
@@ -279,7 +304,6 @@ nav p:hover{
     word-spacing: 0.3rem;
     line-height: 1.7rem;
     transition: 250ms;
-    /* cursor: pointer; */
 }
 .contact-container p a,
 .contact-container p a:visited,
@@ -324,16 +348,6 @@ footer p a:hover{
 }
 /*  */
 /* certifications container */
-@keyframes containerPoping {
-    0%{    
-        transform: translate(-50%, -50%);
-        /* opacity: 0; */
-    }
-    100%{
-        transform: translate(-50%, -50%);
-        /* opacity: 1; */
-    }
-}
 .certifications-container{
     opacity: 1;
     width: fit-content;
@@ -346,8 +360,8 @@ footer p a:hover{
     border: solid 10px rgb(0, 0, 0);
     background-color: white;
     display: none;
-    animation: containerPoping 0.25s linear forwards;
     transition: 250ms;
+    z-index: 100;
 }
 .certifications-container h2{
     font-size: 2rem;
@@ -400,14 +414,11 @@ footer p a:hover{
     margin-top: 0rem;
     width: 0rem;
     height: 0rem;
-    /* border: solid 1px transparent; */
     display: none;
     transition: 250ms;
     justify-content: center;
     align-items: center;
-    /* box-shadow: inset 3px 3px 5px rgb(65, 65, 65), inset -3px -3px 5px; */
     background-color: rgb(194, 194, 194);
-    /* border: solid 5px black; */
 }
 .certificate-container img{
     width: 90%;
@@ -416,5 +427,14 @@ footer p a:hover{
     display: none;
     transition: 250ms;
     object-fit: cover;
-    /* box-shadow: 3px 3px 5px rgb(65, 65, 65), -3px -3px 5px; */
+}
+@keyframes slider{
+    0%{
+        transform: translate(0%, -150%);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
 }
