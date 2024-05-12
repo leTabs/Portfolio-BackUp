@@ -160,6 +160,7 @@ nav p:hover{
     margin: 2.5rem 0;
     margin-bottom: 5rem;
     height: fit-content;
+    text-align: center;
 }
 .project-container:nth-of-type(2),
 .project-container:nth-of-type(4){
@@ -168,9 +169,10 @@ nav p:hover{
 .project-text-container h3{
     font-size: 2.75rem;
     text-align: center;
-    margin: 3rem  0 0 0;
+    margin: 3rem  auto 0 auto;
     letter-spacing: 0.15rem;
     word-spacing: 0.3rem;
+    width: 80%;
 }
 .project-text-container .dot-div{
     width: 0.5rem;
@@ -183,7 +185,7 @@ nav p:hover{
     font-size: 1.5rem;
     width: 75%;
     margin: 1.5rem auto;
-    text-align: justify;
+    /* text-align: justify; */
     letter-spacing: 0.1rem;
 }
 .project-container a{
@@ -210,11 +212,16 @@ nav p:hover{
     align-items: center;
 }
 .project-img-container img{
-    width: 90%;
-    height: 90%;
-    border-radius: 40px;
+    width: 95%;
+    height: 95%;
+    /* border-radius: 40px; */
     object-fit: cover;
-    border: solid 1px gray;
+    /* border: solid 1px gray; */
+    box-shadow: 3px 3px 15px black;
+}
+.project-img-container img:nth-of-type(2),
+.project-img-container img:nth-of-type(4){
+    box-shadow: -3px -3px 15px black;
 }
 
 /* section skills */
