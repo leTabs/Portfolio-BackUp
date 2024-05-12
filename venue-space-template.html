@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venue Space Template</title>
-    <link rel="stylesheet" href="styles/venue-space-template.css">
+    <title>Lysimaxos - Dev | Portfolio | Websites | Development - Updates - Maintenance| Venue Space Template</title>
+    <link rel="stylesheet" href="styles/projects.css">
 </head>
 <body>
+    <!-- Large screen navigation bar elements -->
     <nav class="nav-bar">
         <div class="nav-left">
             <img src="images/icons/code.png" alt="" class="">
-            <h2>Your name</h2>
+            <h2 class="nav-name">Lysimaxos - Dev</h2>
         </div>
         <div class="">
             <p class="nav-home">Home</p>
@@ -19,14 +20,19 @@
             <p class="nav-communication">Communication</p>
         </div>
     </nav>
+
+    <!-- Main -->
     <main>
         <section class="section-general-desc">
+            <!-- A description of the project, title & paragraph -->
             <h3>Venue Space Template</h3>
             <p class="description">
-                This is a small description of the template in question.
-                It needs to display some applications of the page, it's usage.
-                Some characteristics and the some fine words.
+                A comprehensive venue space website designed to elevate event planning experiences. This particular project encapsulates my ability to blend functionality with aesthetic appeal, providing users with an intuitive platform to explore.
             </p>
+
+            <hr class="hr-desc-bottom">
+
+            <!-- This div encapsulates the image samples of the project with corresponding text description -->
             <div class="template-display">
                 <div class="display-img-description-pair">
                     <div class="display-img-wrapper">
@@ -45,6 +51,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- The Gallery of all images -->
         <section class="template-all-imgs">
             <h3>Template Gallery</h3>
             <div class="expand-hide-btn-wrapper">
@@ -52,53 +60,53 @@
                 <span class="empty-span"></span>
                 <button class="expand-all-btn">Expand all</button>
             </div>
+            <!-- The div that contains all the expandable images -->
             <div class="all-imgs-wrapper"> 
-
                 <span class="all-imgs-span">
-                    <p>Opening Panel</p>
                     <img src="images/icons/plus-solid.svg" alt="" class="expand-hide-icon">
+                    <p>Opening Panel</p>
                 </span>
                 <div class="img-container">
                     <img src="images/project01/venue01.png" alt="" class="template-img">
                 </div>
                 <span class="all-imgs-span">
-                    <p>Opening Panel</p>
                     <img src="images/icons/plus-solid.svg" alt="" class="expand-hide-icon">
+                    <p>About Section</p>
                 </span>
                 <div class="img-container">
                     <img src="images/project01/venue02.png" alt="" class="template-img">
                 </div>
                 <span class="all-imgs-span">
-                    <p>Opening Panel</p>
                     <img src="images/icons/plus-solid.svg" alt="" class="expand-hide-icon">
+                    <p>Services Section</p>
                 </span>
                 <div class="img-container">
                     <img src="images/project01/venue03.png" alt="" class="template-img">
                 </div>
                 <span class="all-imgs-span">
-                    <p>Opening Panel</p>
                     <img src="images/icons/plus-solid.svg" alt="" class="expand-hide-icon">
+                    <p>Contact Form</p>
                 </span>
                 <div class="img-container">
                     <img src="images/project01/venue04.png" alt="" class="template-img">
                 </div>
                 <span class="all-imgs-span">
-                    <p>Opening Panel</p>
                     <img src="images/icons/plus-solid.svg" alt="" class="expand-hide-icon">
+                    <p>Information Section</p>
                 </span>
                 <div class="img-container">
                     <img src="images/project01/venue05.png" alt="" class="template-img">
                 </div>
                 <span class="all-imgs-span">
-                    <p>Opening Panel</p>
                     <img src="images/icons/plus-solid.svg" alt="" class="expand-hide-icon">
+                    <p>Service List no1</p>
                 </span>
                 <div class="img-container">
                     <img src="images/project01/venue06.png" alt="" class="template-img">
                 </div>
                 <span class="all-imgs-span">
-                    <p>Opening Panel</p>
                     <img src="images/icons/plus-solid.svg" alt="" class="expand-hide-icon">
+                    <p>Service List no2</p>
                 </span>
                 <div class="img-container">
                     <img src="images/project01/venue07.png" alt="" class="template-img">
@@ -108,9 +116,9 @@
         
 
 
-        <!-- middle -->
+        <!-- Information container -->
         <section class="section-communication">
-            <!-- <h3>Get in Touch</h3> -->
+            
             <div class="contact-container">
                 <!--  -->
                 <div class="contact-info">
@@ -151,10 +159,13 @@
                 <!--  -->
             </div>
         </section>
+        <!-- Small footer -->
         <footer>
             <p>Created by <a href="">leTabs</a> .</p>
         </footer>
     </main>
+
+    <!-- Certifications elements (js functionality, file: globalFunctionality.js) -->
     <div class="certifications-container">
         <h2>Earned Certifications</h2>
         <span>
@@ -175,8 +186,10 @@
         </div>
         <button class="certifications-close-btn">close</button>
     </div>
-
+<!--  -->
 </body>
+
 <script src="functionality/vanue-space-template.js"></script>
 <script src="functionality/globalFunctionality.js"></script>
+
 </html>
