@@ -1,4 +1,4 @@
-const homeViewCvBtn = document.querySelector('.home-view-cv-btn')
+// const homeViewCvBtn = document.querySelector('.home-view-cv-btn')
 // nav elements
 const navHome = document.querySelector('.nav-home')
 const navMyWork = document.querySelector('.nav-my-work')
@@ -14,14 +14,6 @@ const sectionCommunication = document.querySelector('.section-communication')
 
 // projects elements
 // const projectBtn01 = document.querySelector('.project-btn-01')
-
-// 
-const alertsArray = [homeViewCvBtn]
-for(let i = 0; i < alertsArray.length; i++){
-    alertsArray[i].addEventListener('click', ()=>{
-        alert('comming soon')
-    })
-}
 
 // scroll in to view functionalities
 navHome.addEventListener('click', ()=>{
