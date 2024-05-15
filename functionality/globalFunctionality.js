@@ -8,13 +8,30 @@ const cpi02 = document.querySelector('.cpi-02')
 const cpi03 = document.querySelector('.cpi-03')
 const certificateImg = document.querySelector('.certificate-img')
 
-contactCertifications.addEventListener('click', ()=>{
-    certificationsContainer.style.opacity = '0'
-    certificationsContainer.style.display = 'block'
-    setTimeout(()=>{
-    certificationsContainer.style.opacity = '1'
-    }, 1)
 
+
+
+
+// container certificationsContainer
+
+function frameDisplayer(container){
+    container.style.opacity = '0'
+    container.style.display = 'block'
+    setTimeout(()=>{
+    container.style.opacity = '1'
+    }, 1)
+}
+function frameCloser(container){
+    container.style.top = '55%'
+    container.style.opacity = '0'
+    setTimeout(()=>{
+        container.style.top = '50%'
+        container.style.display = 'none'
+    }, 250)
+}
+
+contactCertifications.addEventListener('click', ()=>{
+frameDisplayer(certificationsContainer)
 })
 
 let certificationSwitch = false
@@ -24,12 +41,7 @@ let cpiSwitcher03 = false
 const switcherArray = [cpiSwitcher01, cpiSwitcher02, cpiSwitcher03]
 
 certificationsCloseBtn.addEventListener('click', ()=>{
-    certificationsContainer.style.top = '55%'
-    certificationsContainer.style.opacity = '0'
-    setTimeout(()=>{
-        certificationsContainer.style.top = '50%'
-        certificationsContainer.style.display = 'none'
-    }, 250)
+    frameCloser(certificationsContainer)
     
     certificationSwitch = false
     setTimeout(()=>{
@@ -152,38 +164,26 @@ cpi03.addEventListener('click', ()=>{
 
 document.querySelector('html').addEventListener('keydown', function(event){
     if(event.key === 'Escape'){
-        // THE FUNCTIONIONALITY OF THE HTML 
-        // LISTENER IS COPIED FROM THE certificationsCloseBtn listner's functionality
+        frameCloser(certificationsContainer)
+}})
 
-    certificationsContainer.style.top = '55%'
-    certificationsContainer.style.opacity = '0'
-    setTimeout(()=>{
-        certificationsContainer.style.top = '50%'
-        certificationsContainer.style.display = 'none'
-    }, 250)
-    
-    certificationSwitch = false
-    setTimeout(()=>{
-        certificateImg.style.opacity = '0'
-        setTimeout(()=>{
-            certificateImg.style.display = 'none'
-        }, 250)
-        setTimeout(()=>{
-            certificateContainer.style.width = '0%'
-            certificateContainer.style.height = '0vh'
-            certificateContainer.style.marginTop = '0'
-            setTimeout(()=>{
-                certificateContainer.style.display = 'none';
-                cpiSwitcher01 = false
-                cpiSwitcher01 = false
-                cpiSwitcher01 = false
-                cpi01.src = 'images/icons/plus-solid.svg'
-                cpi02.src = 'images/icons/plus-solid.svg'
-                cpi03.src = 'images/icons/plus-solid.svg'
-            }, 250)
-        },1)
-    }, 1)
 
+const cvOpener = document.querySelectorAll('.cv-opener')
+const cvContainer = document.querySelector('.cv-container')
+
+
+cvContainer.innerHTML = `
+<h2> CVs</h2>
+    <a href="">Greek CV</a>
+    <a href="">English Cv</a>
+    <button class="cv-close-btn">close</button>
+`
+
+
+for(let i = 0; i < cvOpener.length; i++){
+    cvOpener[i].addEventListener('click', ()=>{
+        // cvContainer.style.display = 'block'
+        frameDisplayer(cvContainer)
+        document.querySelector('.cv-close-btn').addEventListener('click',()=>{frameCloser(cvContainer)})
+    })
 }
-    
-})
