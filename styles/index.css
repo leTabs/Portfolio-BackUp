@@ -8,9 +8,16 @@ html, section, main, body{
 
 ::-webkit-scrollbar{
     background-color: rgb(68, 68, 68);
+    width: 0.75rem;
 }
 ::-webkit-scrollbar-thumb{
     background-color: rgb(19, 19, 19);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(28, 28, 28);
+}
+::-webkit-scrollbar-thumb:active{
+    background-color: black;
 }
 ::-webkit-scrollbar-button{
     display: none;
@@ -320,7 +327,7 @@ nav p:hover{
     transition: 250ms;
 }
 
-.contact-certifications:hover,
+.contact-certifications:hover, .cv-contact:hover,
 .contact-container span p a:hover{
     color: rgb(139, 139, 139);
     cursor: pointer;
@@ -378,6 +385,7 @@ footer p a:hover{
     border-bottom: solid 1px black;
     letter-spacing: 0.08rem;
     word-spacing: 0.5rem;
+    text-align: center;
 }
 .certifications-container span{
     display: flex;
@@ -444,4 +452,59 @@ footer p a:hover{
         transform: translate(0%, 0%);
         opacity: 1;
     }
+}
+
+.cv-container{
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    height: fit-content;
+    padding: 1.5rem 4rem;
+    background-color: white;
+    display: none;
+    border: solid 10px rgb(0, 0, 0);
+    transition: 250ms;
+}
+.cv-container h2{
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding:0 2rem 0.5rem 2rem;
+    border-bottom: solid 1px black;
+    letter-spacing: 0.08rem;
+    text-align: center;
+}
+.cv-container a{
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    letter-spacing: 0.075rem;
+    word-spacing: 0.3rem;
+    display: block;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: rgb(20,20,20);
+    padding: 0.5rem 2.25rem;
+    transition: 250ms;
+    border: solid 1px rgb(20,20,20);
+}
+.cv-container a:hover{
+    background-color: white;
+    color: black
+}
+.cv-container button{
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    font-size: 1rem;
+    border: solid 2px transparent;
+    outline: none;
+    background-color: transparent;
+    transition: 250ms;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+}
+.cv-container button:hover{
+    border-bottom: solid 2px black;
 }
